@@ -1,6 +1,3 @@
-{{ config (
-    materialized="table"
-)}}
 
 with customers as 
 (
@@ -12,7 +9,7 @@ select *
 orders as 
 
 (select * 
-    from {{ ref('stg_orders') }}
+    from {{ ref('fct_orders') }}
 
 ),
 
